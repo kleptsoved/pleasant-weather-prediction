@@ -1,0 +1,993 @@
+{
+    "analysis_info": {
+        "date": "2025-06-10 06:12:17",
+        "problem_type": "multilabel_classification",
+        "n_targets": 14,
+        "target_stations": [
+            "BASEL",
+            "BELGRADE",
+            "BUDAPEST",
+            "DEBILT",
+            "DUSSELDORF",
+            "HEATHROW",
+            "KASSEL",
+            "LJUBLJANA",
+            "MAASTRICHT",
+            "MADRID",
+            "MUNCHENB",
+            "OSLO",
+            "STOCKHOLM",
+            "VALENTIA"
+        ],
+        "n_features": 124,
+        "n_train_samples": 18360,
+        "n_test_samples": 4590
+    },
+    "configuration": {
+        "target_column": "pleasant_weather",
+        "station_column": "station_id",
+        "missing_threshold": 0.04,
+        "critical_features": [
+            "temp",
+            "humidity",
+            "pressure",
+            "wind"
+        ],
+        "overfitting_threshold": 0.05,
+        "high_accuracy_threshold": 0.95,
+        "exclude_patterns": [
+            "date",
+            "time",
+            "year",
+            "month",
+            "day",
+            "hour",
+            "minute",
+            "id"
+        ],
+        "weather_patterns": {
+            "temperature": [
+                "temp"
+            ],
+            "humidity": [
+                "humid",
+                "moisture"
+            ],
+            "pressure": [
+                "pressure",
+                "press"
+            ],
+            "wind": [
+                "wind",
+                "gust"
+            ],
+            "precipitation": [
+                "rain",
+                "precip",
+                "snow"
+            ],
+            "radiation": [
+                "radiation",
+                "solar"
+            ],
+            "visibility": [
+                "visibility",
+                "vis"
+            ],
+            "clouds": [
+                "cloud"
+            ]
+        },
+        "neural_network_params": {
+            "hidden_layer_sizes": [
+                [
+                    50
+                ],
+                [
+                    100
+                ],
+                [
+                    100,
+                    50
+                ],
+                [
+                    100,
+                    75,
+                    50
+                ],
+                [
+                    200,
+                    100,
+                    50
+                ]
+            ],
+            "max_iter": [
+                500,
+                1000,
+                2000
+            ],
+            "tol": [
+                0.001,
+                0.0001,
+                1e-05
+            ],
+            "activation": [
+                "relu",
+                "tanh"
+            ],
+            "solver": [
+                "adam",
+                "lbfgs"
+            ]
+        },
+        "knn_params": {
+            "n_neighbors": [
+                4,
+                5
+            ],
+            "weights": [
+                "uniform",
+                "distance"
+            ],
+            "metric": [
+                "euclidean",
+                "manhattan"
+            ]
+        }
+    },
+    "feature_info": {
+        "n_features": 124,
+        "excluded_columns": [
+            "DATE",
+            "MONTH"
+        ],
+        "dropped_stations": [
+            "TOURS",
+            "GDANSK",
+            "ROMA"
+        ]
+    },
+    "model_comparison": [
+        {
+            "Model": "Gradient Boosting",
+            "accuracy": 0.9899004046062869,
+            "precision": 0.9872330547818012,
+            "recall": 0.9907244747382474,
+            "f1_score": 0.9889283155344775,
+            "cv_score": 0.8525599128540303,
+            "train_accuracy": 0.9040305010893246,
+            "training_time": 1742.9502396583557,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "BELGRADE": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "BUDAPEST": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "DEBILT": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "DUSSELDORF": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "HEATHROW": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "KASSEL": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "LJUBLJANA": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "MAASTRICHT": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "MADRID": {
+                    "accuracy": 0.8586056644880175,
+                    "precision": 0.8212627669452182,
+                    "recall": 0.8701426463354648,
+                    "f1": 0.8449964174826845
+                },
+                "MUNCHENB": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "OSLO": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "STOCKHOLM": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "VALENTIA": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                }
+            },
+            "overfitting_score": -0.08586990351696233,
+            "is_overfitting": false
+        },
+        {
+            "Model": "Decision Tree",
+            "accuracy": 0.9875194522253345,
+            "precision": 0.9837475494846013,
+            "recall": 0.9898812451689973,
+            "f1_score": 0.9866529090667022,
+            "cv_score": 0.8136710239651416,
+            "train_accuracy": 0.8319716775599129,
+            "training_time": 37.1030707359314,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "BELGRADE": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "BUDAPEST": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "DEBILT": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "DUSSELDORF": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "HEATHROW": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "KASSEL": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "LJUBLJANA": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "MAASTRICHT": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "MADRID": {
+                    "accuracy": 0.8252723311546841,
+                    "precision": 0.7724656927844179,
+                    "recall": 0.8583374323659616,
+                    "f1": 0.8131407269338303
+                },
+                "MUNCHENB": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "OSLO": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "STOCKHOLM": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                },
+                "VALENTIA": {
+                    "accuracy": 1.0,
+                    "precision": 1.0,
+                    "recall": 1.0,
+                    "f1": 1.0
+                }
+            },
+            "overfitting_score": -0.1555477746654217,
+            "is_overfitting": false
+        },
+        {
+            "Model": "Random Forest",
+            "accuracy": 0.9642390289449115,
+            "precision": 0.946574255359806,
+            "recall": 0.8571056172533872,
+            "f1_score": 0.8782716628161963,
+            "cv_score": 0.6363289760348584,
+            "train_accuracy": 0.9977124183006536,
+            "training_time": 119.17073202133179,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 0.9814814814814815,
+                    "precision": 0.9651376146788991,
+                    "recall": 0.9572338489535942,
+                    "f1": 0.9611694837825491
+                },
+                "BELGRADE": {
+                    "accuracy": 0.979520697167756,
+                    "precision": 0.9587242026266416,
+                    "recall": 0.9820627802690582,
+                    "f1": 0.970253164556962
+                },
+                "BUDAPEST": {
+                    "accuracy": 0.9806100217864924,
+                    "precision": 0.9616419919246298,
+                    "recall": 0.9780971937029432,
+                    "f1": 0.9697997964031219
+                },
+                "DEBILT": {
+                    "accuracy": 0.9766884531590414,
+                    "precision": 0.9551357733175915,
+                    "recall": 0.9214123006833713,
+                    "f1": 0.9379710144927537
+                },
+                "DUSSELDORF": {
+                    "accuracy": 0.9758169934640523,
+                    "precision": 0.9716157205240175,
+                    "recall": 0.9128205128205128,
+                    "f1": 0.9413008989952406
+                },
+                "HEATHROW": {
+                    "accuracy": 0.9531590413943355,
+                    "precision": 0.9008908685968819,
+                    "recall": 0.8652406417112299,
+                    "f1": 0.8827059465357338
+                },
+                "KASSEL": {
+                    "accuracy": 0.9703703703703703,
+                    "precision": 0.956390977443609,
+                    "recall": 0.8559892328398385,
+                    "f1": 0.9034090909090909
+                },
+                "LJUBLJANA": {
+                    "accuracy": 0.984313725490196,
+                    "precision": 0.9714751426242869,
+                    "recall": 0.9698942229454841,
+                    "f1": 0.9706840390879479
+                },
+                "MAASTRICHT": {
+                    "accuracy": 0.9806100217864924,
+                    "precision": 0.9557235421166307,
+                    "recall": 0.9485530546623794,
+                    "f1": 0.9521247982786444
+                },
+                "MADRID": {
+                    "accuracy": 0.8461873638344226,
+                    "precision": 0.7955456570155902,
+                    "recall": 0.8785046728971962,
+                    "f1": 0.8349696119682094
+                },
+                "MUNCHENB": {
+                    "accuracy": 0.9773420479302832,
+                    "precision": 0.9669603524229075,
+                    "recall": 0.9222689075630253,
+                    "f1": 0.9440860215053763
+                },
+                "OSLO": {
+                    "accuracy": 0.9753812636165577,
+                    "precision": 0.9795221843003413,
+                    "recall": 0.8503703703703703,
+                    "f1": 0.9103885804916733
+                },
+                "STOCKHOLM": {
+                    "accuracy": 0.9610021786492374,
+                    "precision": 0.9445255474452555,
+                    "recall": 0.8210659898477157,
+                    "f1": 0.878479293957909
+                },
+                "VALENTIA": {
+                    "accuracy": 0.9568627450980393,
+                    "precision": 0.96875,
+                    "recall": 0.13596491228070176,
+                    "f1": 0.23846153846153847
+                }
+            },
+            "overfitting_score": 0.03347338935574207,
+            "is_overfitting": false
+        },
+        {
+            "Model": "Logistic Regression",
+            "accuracy": 0.9631652661064427,
+            "precision": 0.9198110986610224,
+            "recall": 0.9177157389281708,
+            "f1_score": 0.9183604326570495,
+            "cv_score": 0.6233660130718954,
+            "train_accuracy": 0.6507080610021786,
+            "training_time": 59.33882117271423,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 0.9710239651416122,
+                    "precision": 0.9281914893617021,
+                    "recall": 0.9526842584167425,
+                    "f1": 0.9402784014369107
+                },
+                "BELGRADE": {
+                    "accuracy": 0.9679738562091503,
+                    "precision": 0.9497455470737913,
+                    "recall": 0.9564381806534273,
+                    "f1": 0.953080114905841
+                },
+                "BUDAPEST": {
+                    "accuracy": 0.9729847494553376,
+                    "precision": 0.9513841998649561,
+                    "recall": 0.9644079397672827,
+                    "f1": 0.9578518014955812
+                },
+                "DEBILT": {
+                    "accuracy": 0.9703703703703703,
+                    "precision": 0.9274193548387096,
+                    "recall": 0.9168564920273349,
+                    "f1": 0.9221076746849943
+                },
+                "DUSSELDORF": {
+                    "accuracy": 0.9694989106753813,
+                    "precision": 0.922998986828774,
+                    "recall": 0.9343589743589743,
+                    "f1": 0.928644240570846
+                },
+                "HEATHROW": {
+                    "accuracy": 0.9594771241830066,
+                    "precision": 0.897136797454931,
+                    "recall": 0.9048128342245989,
+                    "f1": 0.9009584664536742
+                },
+                "KASSEL": {
+                    "accuracy": 0.9797385620915032,
+                    "precision": 0.9333333333333333,
+                    "recall": 0.9421265141318977,
+                    "f1": 0.9377093101138647
+                },
+                "LJUBLJANA": {
+                    "accuracy": 0.9610021786492374,
+                    "precision": 0.9173290937996821,
+                    "recall": 0.9389747762408462,
+                    "f1": 0.9280257338158424
+                },
+                "MAASTRICHT": {
+                    "accuracy": 0.9718954248366013,
+                    "precision": 0.9258474576271186,
+                    "recall": 0.9367631296891747,
+                    "f1": 0.9312733084709643
+                },
+                "MADRID": {
+                    "accuracy": 0.8442265795206971,
+                    "precision": 0.823992133726647,
+                    "recall": 0.82439744220364,
+                    "f1": 0.8241947381362184
+                },
+                "MUNCHENB": {
+                    "accuracy": 0.9769063180827887,
+                    "precision": 0.9452631578947368,
+                    "recall": 0.9432773109243697,
+                    "f1": 0.9442691903259727
+                },
+                "OSLO": {
+                    "accuracy": 0.9753812636165577,
+                    "precision": 0.9096209912536443,
+                    "recall": 0.9244444444444444,
+                    "f1": 0.916972814107274
+                },
+                "STOCKHOLM": {
+                    "accuracy": 0.9793028322440087,
+                    "precision": 0.9425287356321839,
+                    "recall": 0.9365482233502538,
+                    "f1": 0.939528962444303
+                },
+                "VALENTIA": {
+                    "accuracy": 0.9845315904139433,
+                    "precision": 0.9025641025641026,
+                    "recall": 0.7719298245614035,
+                    "f1": 0.8321513002364066
+                }
+            },
+            "overfitting_score": -0.3124572051042641,
+            "is_overfitting": false
+        },
+        {
+            "Model": "Neural Network",
+            "accuracy": 0.9500155617802678,
+            "precision": 0.8782739750683161,
+            "recall": 0.8955113688510642,
+            "f1_score": 0.8866621823063203,
+            "cv_score": 0.5523420479302832,
+            "train_accuracy": 0.9992919389978213,
+            "training_time": 8069.256648778915,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 0.9588235294117647,
+                    "precision": 0.9026548672566371,
+                    "recall": 0.9281164695177434,
+                    "f1": 0.9152086137281292
+                },
+                "BELGRADE": {
+                    "accuracy": 0.954248366013072,
+                    "precision": 0.9146715776550031,
+                    "recall": 0.9545163356822549,
+                    "f1": 0.9341692789968652
+                },
+                "BUDAPEST": {
+                    "accuracy": 0.965359477124183,
+                    "precision": 0.932845744680851,
+                    "recall": 0.9603011635865846,
+                    "f1": 0.9463743676222597
+                },
+                "DEBILT": {
+                    "accuracy": 0.9553376906318083,
+                    "precision": 0.8768197088465846,
+                    "recall": 0.8917995444191344,
+                    "f1": 0.8842461885940147
+                },
+                "DUSSELDORF": {
+                    "accuracy": 0.961437908496732,
+                    "precision": 0.9014084507042254,
+                    "recall": 0.918974358974359,
+                    "f1": 0.9101066531234129
+                },
+                "HEATHROW": {
+                    "accuracy": 0.95119825708061,
+                    "precision": 0.8683937823834197,
+                    "recall": 0.8962566844919786,
+                    "f1": 0.8821052631578947
+                },
+                "KASSEL": {
+                    "accuracy": 0.9655773420479303,
+                    "precision": 0.8853754940711462,
+                    "recall": 0.9044414535666218,
+                    "f1": 0.8948069241011984
+                },
+                "LJUBLJANA": {
+                    "accuracy": 0.9450980392156862,
+                    "precision": 0.8754803996925442,
+                    "recall": 0.9267697314890154,
+                    "f1": 0.9003952569169961
+                },
+                "MAASTRICHT": {
+                    "accuracy": 0.9575163398692811,
+                    "precision": 0.8796296296296297,
+                    "recall": 0.9163987138263665,
+                    "f1": 0.8976377952755905
+                },
+                "MADRID": {
+                    "accuracy": 0.8200435729847495,
+                    "precision": 0.7995037220843673,
+                    "recall": 0.7924249877029022,
+                    "f1": 0.7959486166007905
+                },
+                "MUNCHENB": {
+                    "accuracy": 0.9673202614379085,
+                    "precision": 0.9229957805907173,
+                    "recall": 0.9191176470588235,
+                    "f1": 0.9210526315789473
+                },
+                "OSLO": {
+                    "accuracy": 0.9577342047930283,
+                    "precision": 0.8411347517730496,
+                    "recall": 0.8785185185185185,
+                    "f1": 0.8594202898550725
+                },
+                "STOCKHOLM": {
+                    "accuracy": 0.961437908496732,
+                    "precision": 0.8921694480102695,
+                    "recall": 0.881979695431472,
+                    "f1": 0.8870453095086152
+                },
+                "VALENTIA": {
+                    "accuracy": 0.9790849673202614,
+                    "precision": 0.8027522935779816,
+                    "recall": 0.7675438596491229,
+                    "f1": 0.7847533632286996
+                }
+            },
+            "overfitting_score": 0.04927637721755351,
+            "is_overfitting": false
+        },
+        {
+            "Model": "SVM",
+            "accuracy": 0.9438064114534702,
+            "precision": 0.8625710695618886,
+            "recall": 0.8761167935837056,
+            "f1_score": 0.8689098280679525,
+            "cv_score": 0.531590413943355,
+            "train_accuracy": 0.8751633986928105,
+            "training_time": 12100.643403053284,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 0.9457516339869281,
+                    "precision": 0.8754416961130742,
+                    "recall": 0.9017288444040037,
+                    "f1": 0.8883908561183326
+                },
+                "BELGRADE": {
+                    "accuracy": 0.9387799564270153,
+                    "precision": 0.889768574908648,
+                    "recall": 0.9359385009609225,
+                    "f1": 0.9122697471120824
+                },
+                "BUDAPEST": {
+                    "accuracy": 0.947276688453159,
+                    "precision": 0.9039098740888005,
+                    "recall": 0.9336071184120466,
+                    "f1": 0.9185185185185185
+                },
+                "DEBILT": {
+                    "accuracy": 0.9494553376906318,
+                    "precision": 0.8704128440366973,
+                    "recall": 0.8644646924829157,
+                    "f1": 0.8674285714285714
+                },
+                "DUSSELDORF": {
+                    "accuracy": 0.9494553376906318,
+                    "precision": 0.8733668341708543,
+                    "recall": 0.8912820512820513,
+                    "f1": 0.8822335025380711
+                },
+                "HEATHROW": {
+                    "accuracy": 0.9400871459694989,
+                    "precision": 0.8416149068322981,
+                    "recall": 0.8695187165775401,
+                    "f1": 0.855339295107838
+                },
+                "KASSEL": {
+                    "accuracy": 0.9601307189542484,
+                    "precision": 0.8794037940379403,
+                    "recall": 0.873485868102288,
+                    "f1": 0.8764348413234301
+                },
+                "LJUBLJANA": {
+                    "accuracy": 0.9376906318082788,
+                    "precision": 0.862413528055342,
+                    "recall": 0.9129373474369405,
+                    "f1": 0.8869565217391304
+                },
+                "MAASTRICHT": {
+                    "accuracy": 0.9498910675381264,
+                    "precision": 0.8743343982960596,
+                    "recall": 0.879957127545552,
+                    "f1": 0.8771367521367521
+                },
+                "MADRID": {
+                    "accuracy": 0.8572984749455338,
+                    "precision": 0.823170731707317,
+                    "recall": 0.8632562715199213,
+                    "f1": 0.8427370948379351
+                },
+                "MUNCHENB": {
+                    "accuracy": 0.9546840958605665,
+                    "precision": 0.8907563025210085,
+                    "recall": 0.8907563025210085,
+                    "f1": 0.8907563025210085
+                },
+                "OSLO": {
+                    "accuracy": 0.9529411764705882,
+                    "precision": 0.8183079056865464,
+                    "recall": 0.8740740740740741,
+                    "f1": 0.8452722063037249
+                },
+                "STOCKHOLM": {
+                    "accuracy": 0.9522875816993464,
+                    "precision": 0.865211810012837,
+                    "recall": 0.8553299492385786,
+                    "f1": 0.8602425015954053
+                },
+                "VALENTIA": {
+                    "accuracy": 0.9775599128540305,
+                    "precision": 0.8078817733990148,
+                    "recall": 0.7192982456140351,
+                    "f1": 0.7610208816705336
+                }
+            },
+            "overfitting_score": -0.06864301276065976,
+            "is_overfitting": false
+        },
+        {
+            "Model": "Naive Bayes",
+            "accuracy": 0.9220510426392778,
+            "precision": 0.7376010502452874,
+            "recall": 0.973000365014408,
+            "f1_score": 0.8311208785132388,
+            "cv_score": 0.558115468409586,
+            "train_accuracy": 0.5583877995642702,
+            "training_time": 3.9714515209198,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 0.940958605664488,
+                    "precision": 0.8084947839046199,
+                    "recall": 0.9872611464968153,
+                    "f1": 0.8889799262597297
+                },
+                "BELGRADE": {
+                    "accuracy": 0.9372549019607843,
+                    "precision": 0.8995605775266792,
+                    "recall": 0.9180012812299808,
+                    "f1": 0.9086873811033608
+                },
+                "BUDAPEST": {
+                    "accuracy": 0.9446623093681917,
+                    "precision": 0.8755444928438083,
+                    "recall": 0.9630390143737166,
+                    "f1": 0.9172099087353325
+                },
+                "DEBILT": {
+                    "accuracy": 0.9322440087145969,
+                    "precision": 0.7429305912596401,
+                    "recall": 0.9874715261958997,
+                    "f1": 0.847921760391198
+                },
+                "DUSSELDORF": {
+                    "accuracy": 0.9407407407407408,
+                    "precision": 0.7860048820179008,
+                    "recall": 0.9907692307692307,
+                    "f1": 0.8765880217785844
+                },
+                "HEATHROW": {
+                    "accuracy": 0.9061002178649238,
+                    "precision": 0.6883408071748879,
+                    "recall": 0.9850267379679144,
+                    "f1": 0.8103827540695117
+                },
+                "KASSEL": {
+                    "accuracy": 0.9424836601307189,
+                    "precision": 0.7426545086119554,
+                    "recall": 0.9865410497981157,
+                    "f1": 0.8473988439306358
+                },
+                "LJUBLJANA": {
+                    "accuracy": 0.9564270152505446,
+                    "precision": 0.8763716166788588,
+                    "recall": 0.9747762408462164,
+                    "f1": 0.9229583975346687
+                },
+                "MAASTRICHT": {
+                    "accuracy": 0.9287581699346406,
+                    "precision": 0.7471451876019576,
+                    "recall": 0.9817792068595927,
+                    "f1": 0.8485409911996294
+                },
+                "MADRID": {
+                    "accuracy": 0.8071895424836601,
+                    "precision": 0.7375827814569537,
+                    "recall": 0.8765371372356124,
+                    "f1": 0.8010788941335132
+                },
+                "MUNCHENB": {
+                    "accuracy": 0.940958605664488,
+                    "precision": 0.7844611528822055,
+                    "recall": 0.9863445378151261,
+                    "f1": 0.8738948348068869
+                },
+                "OSLO": {
+                    "accuracy": 0.9069716775599128,
+                    "precision": 0.6129326047358834,
+                    "recall": 0.997037037037037,
+                    "f1": 0.7591652566271856
+                },
+                "STOCKHOLM": {
+                    "accuracy": 0.9037037037037037,
+                    "precision": 0.6413398692810458,
+                    "recall": 0.9961928934010152,
+                    "f1": 0.7803180914512923
+                },
+                "VALENTIA": {
+                    "accuracy": 0.9202614379084967,
+                    "precision": 0.38305084745762713,
+                    "recall": 0.9912280701754386,
+                    "f1": 0.5525672371638142
+                }
+            },
+            "overfitting_score": -0.36366324307500764,
+            "is_overfitting": false
+        },
+        {
+            "Model": "KNN",
+            "accuracy": 0.8970743853096793,
+            "precision": 0.7595177752036795,
+            "recall": 0.7396769383995281,
+            "f1_score": 0.7461354608907007,
+            "cv_score": 0.4376361655773421,
+            "train_accuracy": 1.0,
+            "training_time": 114.01654148101807,
+            "station_metrics": {
+                "BASEL": {
+                    "accuracy": 0.8952069716775599,
+                    "precision": 0.76592082616179,
+                    "recall": 0.8098271155595996,
+                    "f1": 0.7872622733303848
+                },
+                "BELGRADE": {
+                    "accuracy": 0.8572984749455338,
+                    "precision": 0.7745454545454545,
+                    "recall": 0.8187059577194107,
+                    "f1": 0.796013702896294
+                },
+                "BUDAPEST": {
+                    "accuracy": 0.8812636165577342,
+                    "precision": 0.7924648786717752,
+                    "recall": 0.8494182067077344,
+                    "f1": 0.8199537495870499
+                },
+                "DEBILT": {
+                    "accuracy": 0.9058823529411765,
+                    "precision": 0.7706310679611651,
+                    "recall": 0.7232346241457859,
+                    "f1": 0.7461809635722679
+                },
+                "DUSSELDORF": {
+                    "accuracy": 0.903921568627451,
+                    "precision": 0.7746913580246914,
+                    "recall": 0.7723076923076924,
+                    "f1": 0.773497688751926
+                },
+                "HEATHROW": {
+                    "accuracy": 0.8814814814814815,
+                    "precision": 0.7047120418848167,
+                    "recall": 0.7197860962566844,
+                    "f1": 0.7121693121693121
+                },
+                "KASSEL": {
+                    "accuracy": 0.9206971677559913,
+                    "precision": 0.7841079460269865,
+                    "recall": 0.7039030955585465,
+                    "f1": 0.7418439716312056
+                },
+                "LJUBLJANA": {
+                    "accuracy": 0.8825708061002179,
+                    "precision": 0.7633587786259542,
+                    "recall": 0.8136696501220505,
+                    "f1": 0.7877116975187082
+                },
+                "MAASTRICHT": {
+                    "accuracy": 0.9135076252723312,
+                    "precision": 0.7881720430107527,
+                    "recall": 0.7856377277599143,
+                    "f1": 0.7869028448738594
+                },
+                "MADRID": {
+                    "accuracy": 0.8359477124183007,
+                    "precision": 0.8013182674199624,
+                    "recall": 0.8371864240039351,
+                    "f1": 0.8188597546307433
+                },
+                "MUNCHENB": {
+                    "accuracy": 0.9050108932461873,
+                    "precision": 0.776824034334764,
+                    "recall": 0.7605042016806722,
+                    "f1": 0.7685774946921444
+                },
+                "OSLO": {
+                    "accuracy": 0.9159041394335512,
+                    "precision": 0.7212863705972435,
+                    "recall": 0.6977777777777778,
+                    "f1": 0.7093373493975904
+                },
+                "STOCKHOLM": {
+                    "accuracy": 0.8991285403050109,
+                    "precision": 0.7229080932784636,
+                    "recall": 0.6687817258883249,
+                    "f1": 0.6947923533289387
+                },
+                "VALENTIA": {
+                    "accuracy": 0.9612200435729847,
+                    "precision": 0.6923076923076923,
+                    "recall": 0.39473684210526316,
+                    "f1": 0.5027932960893855
+                }
+            },
+            "overfitting_score": 0.10292561469032069,
+            "is_overfitting": true
+        }
+    ],
+    "best_model": {
+        "name": "Gradient Boosting",
+        "parameters": {
+            "estimator__learning_rate": 0.1,
+            "estimator__n_estimators": 100
+        },
+        "metrics": {
+            "accuracy": 0.9899004046062869,
+            "precision": 0.9872330547818012,
+            "recall": 0.9907244747382474,
+            "f1_score": 0.9889283155344775,
+            "cv_score": 0.8525599128540303,
+            "train_accuracy": 0.9040305010893246,
+            "training_time": 1742.9502396583557
+        }
+    },
+    "station_analysis": {
+        "station_accuracies": {
+            "BASEL": 0.9616557734204793,
+            "BELGRADE": 0.9543845315904139,
+            "BUDAPEST": 0.9615196078431373,
+            "DEBILT": 0.9612472766884531,
+            "DUSSELDORF": 0.9626089324618736,
+            "HEATHROW": 0.948937908496732,
+            "KASSEL": 0.9673747276688454,
+            "LJUBLJANA": 0.9583877995642702,
+            "MAASTRICHT": 0.9627723311546841,
+            "MADRID": 0.8368464052287582,
+            "MUNCHENB": 0.9652777777777778,
+            "OSLO": 0.9605392156862744,
+            "STOCKHOLM": 0.9571078431372548,
+            "VALENTIA": 0.9724400871459695
+        },
+        "easy_stations": [
+            "BASEL",
+            "BELGRADE",
+            "BUDAPEST",
+            "DEBILT",
+            "DUSSELDORF",
+            "HEATHROW",
+            "KASSEL",
+            "LJUBLJANA",
+            "MAASTRICHT",
+            "MUNCHENB",
+            "OSLO",
+            "STOCKHOLM",
+            "VALENTIA"
+        ],
+        "medium_stations": [
+            "MADRID"
+        ],
+        "hard_stations": []
+    },
+    "task_specific_results": {
+        "knn_best_k": 5,
+        "decision_tree_needs_pruning": false
+    }
+}
