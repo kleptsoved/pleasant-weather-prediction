@@ -77,5 +77,5 @@ ClimateWins aims to deliver robust, accurate, and interpretable machine learning
 
 ## Documentation
 
-- [Project plan PDF](05_results/07_06_ML_project_plan.pdf)
+- [Project plan PDF](01_roject_management/07_06_ML_project_plan.pdf)
 - [Project slides](05_results/ML_project_presentation.pdf)
